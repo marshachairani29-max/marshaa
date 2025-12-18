@@ -1,30 +1,110 @@
 body {
-    background-color: pink;
+    margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #ffe6f0;
 }
 
+/* BIAR BISA SCROLL */
+body {
+    min-height: 100vh;
+}
+
+/* CONTAINER */
 .container {
-    background-color: #fff0f5;
-    padding: 20px;
-    width: 400px;
-    margin: 40px auto;
-    border-radius: 15px;
+    background-color: #fff0f6;
+    width: 80%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 20px;
+    border: 3px solid #f4b6c2;
 }
 
-h2, h3 {
+/* JUDUL */
+h2 {
     color: #d63384;
+    font-size: 26px;
     text-align: center;
 }
 
-button {
-    background-color: hotpink;
-    color: white;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    border-radius: 8px;
+h3 {
+    color: #c2185b;
+    font-size: 20px;
 }
 
+/* TEKS */
+p, li {
+    font-size: 17px;
+    color: #4a1f33;
+    line-height: 1.7;
+}
+
+/* SUBTITLE */
+.subtitle {
+    font-size: 16px;
+    text-align: center;
+    color: #7a3a5a;
+}
+
+/* INPUT */
+input {
+    font-size: 16px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+/* BUTTON */
+button {
+    font-size: 16px;
+    padding: 12px;
+    background-color: #f78fb3;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.logout {
+    background-color: #ff6b81;
+}
+
+/* IMAGE */
+#outputImage {
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 12px;
+    border: 2px solid #f4b6c2;
+    display: none;
+}
+
+/* RESULT */
+.result {
+    background-color: #ffd6e8;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 18px;
+    text-align: center;
+    color: #a61c5c;
+}
+
+/* CHART */
+.bar {
+    background-color: #f78fb3;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* MATERI */
+.materi {
+    background-color: #ffeaf4;
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+/* HIDDEN */
 .hidden {
     display: none;
 }
