@@ -5,9 +5,7 @@
     <title>Klasifikasi Lingkungan Berbasis AI</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<bod<h1 style="background:pink;color:white;text-align:center;">
-</h1>
-y>
+<body>
 
 <!-- LOGIN -->
 <div class="container" id="loginPage">
@@ -24,7 +22,7 @@ y>
 
     <hr>
 
-    <h3>Unggah Gambar Lingkungan</h3>
+    <h3>📷 Unggah Gambar Lingkungan</h3>
     <input type="file" accept="image/*" onchange="previewImage(event)">
     <img id="outputImage">
 
@@ -35,26 +33,31 @@ y>
 
     <hr>
 
-    <!-- GRAFIK -->
-    <h3>Grafik Hasil Klasifikasi</h3>
+    <h3>📊 Grafik Hasil Klasifikasi</h3>
     <div class="chart">
-        <div class="bar clean">Bersih <span id="cleanCount">0</span></div>
-        <div class="bar dirty">Tercemar <span id="dirtyCount">0</span></div>
-        <div class="bar eco">Ramah <span id="ecoCount">0</span></div>
-        <div class="bar industry">Industri <span id="industryCount">0</span></div>
+        <div class="bar clean">Lingkungan Bersih (<span id="cleanCount">0</span>)</div>
+        <div class="bar dirty">Lingkungan Tercemar (<span id="dirtyCount">0</span>)</div>
+        <div class="bar eco">Ramah Lingkungan (<span id="ecoCount">0</span>)</div>
+        <div class="bar industry">Lingkungan Industri (<span id="industryCount">0</span>)</div>
     </div>
 
     <hr>
 
-    <h3>Materi Edukasi</h3>
-    <p>
-        Website ini memberikan edukasi tentang penerapan AI dalam mengklasifikasikan
-        kondisi lingkungan serta meningkatkan kesadaran sosial masyarakat.
-    </p>
+    <!-- MATERI LENGKAP -->
+    <section class="materi">
+        <h2>🌱 Materi Klasifikasi Lingkungan Berbasis AI</h2>
 
-    <button class="logout" onclick="logout()">Logout</button>
-</div>
+        <h3>1. Pengertian</h3>
+        <p>
+            Klasifikasi Lingkungan Berbasis AI adalah penerapan kecerdasan buatan
+            (Artificial Intelligence) untuk mengelompokkan kondisi lingkungan
+            berdasarkan data visual seperti gambar atau foto.
+            Teknologi ini membantu manusia dalam memantau kondisi lingkungan
+            secara cepat dan efisien.
+        </p>
 
-<script src="script.js"></script>
-</body>
-</html>
+        <h3>2. Cara Kerja AI dalam Klasifikasi Lingkungan</h3>
+        <p>
+            Sistem AI bekerja dengan menganalisis pola pada gambar menggunakan
+            algoritma pengenalan citra. Data tersebut kemudian diproses untuk
+            menentukan kategori lingkungan, seperti lingkungan bersih atau
