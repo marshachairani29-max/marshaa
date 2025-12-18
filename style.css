@@ -1,6 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffe4ec, #ffd6e8);
+    background-color: #ffe6f0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,11 +14,11 @@ body {
 
 /* CONTAINER */
 .container {
-    background: #fff0f6;
-    width: 440px;
+    background-color: #fff0f6;
+    width: 450px;
     padding: 25px;
     border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(214, 51, 132, 0.2);
+    border: 3px solid #f4b6c2;
 }
 
 /* JUDUL */
@@ -22,24 +27,17 @@ h2, h3 {
     text-align: center;
 }
 
-/* SUBTITLE */
-.subtitle {
-    font-size: 14px;
-    color: #8a4b6d;
-    text-align: center;
-}
-
 /* TEXT */
 p, li {
+    color: #5a2a42;
     font-size: 14px;
-    color: #5a3a4a;
 }
 
 /* INPUT */
 input {
     width: 100%;
     padding: 10px;
-    margin: 8px 0;
+    margin-top: 8px;
     border-radius: 8px;
     border: 1px solid #f4b6c2;
 }
@@ -48,9 +46,71 @@ input {
 button {
     width: 100%;
     padding: 10px;
+    margin-top: 12px;
     background-color: #f78fb3;
     border: none;
-    color: white;
     border-radius: 8px;
-    cursor: pointer;
-    margin-top
+    color: white;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #e6679e;
+}
+
+/* LOGOUT */
+.logout {
+    background-color: #ff6b81;
+}
+
+/* IMAGE */
+#outputImage {
+    width: 100%;
+    margin-top: 10px;
+    display: none;
+    border-radius: 10px;
+    border: 2px solid #f4b6c2;
+}
+
+/* RESULT */
+.result {
+    background-color: #ffd6e8;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 10px;
+    text-align: center;
+    color: #a61c5c;
+    font-weight: bold;
+}
+
+/* CHART */
+.chart {
+    margin-top: 15px;
+}
+
+.bar {
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 8px;
+    color: white;
+    width: 10%;
+    transition: width 0.5s;
+}
+
+.clean {
+    background-color: #ff9aa2;
+}
+.dirty {
+    background-color: #ff6f91;
+}
+.eco {
+    background-color: #fcbad3;
+}
+.industry {
+    background-color: #cdb4db;
+}
+
+/* HIDDEN */
+.hidden {
+    display: none;
+}
