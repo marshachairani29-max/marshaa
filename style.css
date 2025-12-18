@@ -108,3 +108,12 @@ button {
 .hidden {
     display: none;
 }
+.materi {
+    background-color: #ffeaf4;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #4a1f33;
+}
