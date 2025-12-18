@@ -4,11 +4,6 @@ body {
     background-color: #ffe6f0;
 }
 
-/* BIAR BISA SCROLL */
-body {
-    min-height: 100vh;
-}
-
 /* CONTAINER */
 .container {
     background-color: #fff0f6;
@@ -20,19 +15,18 @@ body {
     border: 3px solid #f4b6c2;
 }
 
-/* JUDUL */
+/* H1 H2 H3 */
 h2 {
     color: #d63384;
     font-size: 26px;
     text-align: center;
 }
-
 h3 {
     color: #c2185b;
     font-size: 20px;
 }
 
-/* TEKS */
+/* TEKS & LIST */
 p, li {
     font-size: 17px;
     color: #4a1f33;
@@ -62,8 +56,14 @@ button {
     border: none;
     border-radius: 10px;
     color: white;
+    cursor: pointer;
 }
 
+button:hover {
+    background-color: #e6679e;
+}
+
+/* LOGOUT */
 .logout {
     background-color: #ff6b81;
 }
@@ -102,18 +102,12 @@ button {
     padding: 25px;
     border-radius: 15px;
     margin-top: 30px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #4a1f33;
 }
 
 /* HIDDEN */
 .hidden {
     display: none;
-}
-.materi {
-    background-color: #ffeaf4;
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
-    font-size: 17px;
-    line-height: 1.6;
-    color: #4a1f33;
 }
