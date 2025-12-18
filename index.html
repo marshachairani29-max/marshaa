@@ -3,30 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Klasifikasi Lingkungan Berbasis AI</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <style>
+        /* BODY */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+        }
 
-<!-- LOGIN PAGE -->
-<div class="container" id="loginPage">
-    <h2>Login Pengguna</h2>
-    <input type="text" id="username" placeholder="Nama Lengkap">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-</div>
+        /* CONTAINER */
+        .container {
+            background-color: #fff0f6;
+            width: 80%;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 20px;
+            border: 3px solid #f4b6c2;
+        }
 
-<!-- HOME PAGE -->
-<div class="container hidden" id="homePage">
-    <h2>Selamat Datang, <span id="displayName"></span></h2>
-    <p class="subtitle">Klasifikasi Lingkungan Berbasis AI & Edukasi Sosial</p>
+        h2 {
+            color: #d63384;
+            font-size: 26px;
+            text-align: center;
+        }
+        h3 {
+            color: #c2185b;
+            font-size: 20px;
+        }
 
-    <hr>
+        p, li {
+            font-size: 17px;
+            color: #4a1f33;
+            line-height: 1.7;
+        }
 
-    <!-- UPLOAD IMAGE -->
-    <h3>📷 Unggah Gambar Lingkungan</h3>
-    <input type="file" accept="image/*" onchange="previewImage(event)">
-    <img id="outputImage">
+        .subtitle {
+            font-size: 16px;
+            text-align: center;
+            color: #7a3a5a;
+        }
 
-    <!-- CLASSIFICATION RESULT -->
-    <div class="result">
-        <h3>Hasil Kla
+        input {
+            font-size: 16px;
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 12px;
+            background
