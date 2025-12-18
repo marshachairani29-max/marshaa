@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<!-- LOGIN -->
+<!-- LOGIN PAGE -->
 <div class="container" id="loginPage">
     <h2>Login Pengguna</h2>
     <input type="text" id="username" placeholder="Nama Lengkap">
@@ -15,55 +15,18 @@
     <button onclick="login()">Login</button>
 </div>
 
-<!-- HOME -->
+<!-- HOME PAGE -->
 <div class="container hidden" id="homePage">
     <h2>Selamat Datang, <span id="displayName"></span></h2>
     <p class="subtitle">Klasifikasi Lingkungan Berbasis AI & Edukasi Sosial</p>
 
     <hr>
 
+    <!-- UPLOAD IMAGE -->
     <h3>📷 Unggah Gambar Lingkungan</h3>
     <input type="file" accept="image/*" onchange="previewImage(event)">
     <img id="outputImage">
 
+    <!-- CLASSIFICATION RESULT -->
     <div class="result">
-        <h3>Hasil Klasifikasi</h3>
-        <p id="classificationResult">Belum ada gambar.</p>
-    </div>
-
-    <hr>
-
-    <h3>📊 Grafik Hasil Klasifikasi</h3>
-    <div class="chart">
-        <div class="bar clean">Lingkungan Bersih (<span id="cleanCount">0</span>)</div>
-        <div class="bar dirty">Lingkungan Tercemar (<span id="dirtyCount">0</span>)</div>
-        <div class="bar eco">Ramah Lingkungan (<span id="ecoCount">0</span>)</div>
-        <div class="bar industry">Lingkungan Industri (<span id="industryCount">0</span>)</div>
-    </div>
-
-    <hr>
-
-    <!-- MATERI LENGKAP -->
-    <section class="materi">
-        <h2>🌱 Materi Klasifikasi Lingkungan Berbasis AI</h2>
-
-        <h3>1. Pengertian</h3>
-        <p>
-            Klasifikasi Lingkungan Berbasis AI adalah penerapan kecerdasan buatan
-            (Artificial Intelligence) untuk mengelompokkan kondisi lingkungan
-            berdasarkan data visual seperti gambar atau foto.
-            Teknologi ini membantu manusia dalam memantau kondisi lingkungan
-            secara cepat dan efisien.
-        </p>
-
-        <h3>2. Cara Kerja AI dalam Klasifikasi Lingkungan</h3>
-        <p>
-            Sistem AI bekerja dengan menganalisis pola pada gambar menggunakan
-            algoritma pengenalan citra. Data tersebut kemudian diproses untuk
-            menentukan kategori lingkungan, seperti lingkungan bersih atau
-<style>
-<script src="script.js"></script>
-body {
-    background-color: pink;
-}
-</style>
+        <h3>Hasil Kla
