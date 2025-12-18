@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Klasifikasi Lingkungan Berbasis AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="container" id="loginPage">
+    <h2>Login Pengguna</h2>
+    <input type="text" id="username" placeholder="Nama Lengkap">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- HOME -->
+<div class="container hidden" id="homePage">
+    <h2>Selamat Datang, <span id="displayName"></span></h2>
+    <p class="subtitle">Klasifikasi Lingkungan Berbasis AI & Edukasi Sosial</p>
+
+    <hr>
+
+    <h3>Unggah Gambar Lingkungan</h3>
+    <input type="file" accept="image/*" onchange="previewImage(event)">
+    <img id="outputImage">
+
+    <div class="result">
+        <h3>Hasil Klasifikasi</h3>
+        <p id="classificationResult">Belum ada gambar.</p>
+    </div>
+
+    <hr>
+
+    <!-- GRAFIK -->
+    <h3>Grafik Hasil Klasifikasi</h3>
+    <div class="chart">
+        <div class="bar clean">Bersih <span id="cleanCount">0</span></div>
+        <div class="bar dirty">Tercemar <span id="dirtyCount">0</span></div>
+        <div class="bar eco">Ramah <span id="ecoCount">0</span></div>
+        <div class="bar industry">Industri <span id="industryCount">0</span></div>
+    </div>
+
+    <hr>
+
+    <h3>Materi Edukasi</h3>
+    <p>
+        Website ini memberikan edukasi tentang penerapan AI dalam mengklasifikasikan
+        kondisi lingkungan serta meningkatkan kesadaran sosial masyarakat.
+    </p>
+
+    <button class="logout" onclick="logout()">Logout</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
