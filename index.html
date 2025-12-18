@@ -1,57 +1,136 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Klasifikasi Lingkungan Berbasis AI</title>
-    <style>
-        /* BODY */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #ffe6f0;
-        }
+<meta charset="UTF-8">
+<title>Klasifikasi Lingkungan Berbasis AI</title>
+<style>
+body { margin:0; font-family:Arial; background-color:#ffe6f0; }
+.container { background:#fff0f6; width:80%; max-width:900px; margin:30px auto; padding:30px; border-radius:20px; border:3px solid #f4b6c2; }
+h2 { color:#d63384; font-size:26px; text-align:center; }
+h3 { color:#c2185b; font-size:20px; }
+p, li { font-size:17px; color:#4a1f33; line-height:1.7; }
+.subtitle { font-size:16px; text-align:center; color:#7a3a5a; }
+input { font-size:16px; padding:10px; margin:10px 0; width:100%; }
+button { font-size:16px; padding:12px; background-color:#f78fb3; border:none; border-radius:10px; color:white; cursor:pointer; }
+button:hover { background-color:#e6679e; }
+.logout { background-color:#ff6b81; }
+#outputImage { width:100%; margin:15px 0; border-radius:12px; border:2px solid #f4b6c2; display:none; }
+.result { background:#ffd6e8; padding:15px; border-radius:12px; font-size:18px; text-align:center; color:#a61c5c; }
+.bar { background:#f78fb3; margin:10px 0; padding:10px; border-radius:10px; color:white; }
+.materi { background:#ffeaf4; padding:25px; border-radius:15px; margin-top:30px; font-size:17px; line-height:1.6; color:#4a1f33; }
+.hidden { display:none; }
+</style>
+</head>
+<body>
 
-        /* CONTAINER */
-        .container {
-            background-color: #fff0f6;
-            width: 80%;
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 30px;
-            border-radius: 20px;
-            border: 3px solid #f4b6c2;
-        }
+<!-- LOGIN PAGE -->
+<div class="container" id="loginPage">
+<h2>Login Pengguna</h2>
+<input type="text" id="username" placeholder="Nama Lengkap">
+<input type="password" id="password" placeholder="Password">
+<button onclick="login()">Login</button>
+</div>
 
-        h2 {
-            color: #d63384;
-            font-size: 26px;
-            text-align: center;
-        }
-        h3 {
-            color: #c2185b;
-            font-size: 20px;
-        }
+<!-- HOME PAGE -->
+<div class="container hidden" id="homePage">
+<h2>Selamat Datang, <span id="displayName"></span></h2>
+<p class="subtitle">Klasifikasi Lingkungan Berbasis AI & Edukasi Sosial</p>
+<hr>
 
-        p, li {
-            font-size: 17px;
-            color: #4a1f33;
-            line-height: 1.7;
-        }
+<h3>📷 Unggah Gambar Lingkungan</h3>
+<input type="file" accept="image/*" onchange="previewImage(event)">
+<img id="outputImage">
 
-        .subtitle {
-            font-size: 16px;
-            text-align: center;
-            color: #7a3a5a;
-        }
+<div class="result">
+<h3>Hasil Klasifikasi</h3>
+<p id="classificationResult">Belum ada gambar.</p>
+</div>
 
-        input {
-            font-size: 16px;
-            padding: 10px;
-            margin: 10px 0;
-            width: 100%;
-        }
+<hr>
+<h3>📊 Grafik Hasil Klasifikasi</h3>
+<div class="chart">
+<div class="bar clean">Lingkungan Bersih (<span id="cleanCount">0</span>)</div>
+<div class="bar dirty">Lingkungan Tercemar (<span id="dirtyCount">0</span>)</div>
+<div class="bar eco">Lingkungan Ramah Lingkungan (<span id="ecoCount">0</span>)</div>
+<div class="bar industry">Lingkungan Industri (<span id="industryCount">0</span>)</div>
+</div>
 
-        button {
-            font-size: 16px;
-            padding: 12px;
-            background
+<hr>
+<section class="materi">
+<h2>🌱 Materi Klasifikasi Lingkungan Berbasis AI</h2>
+<h3>1. Pengertian</h3>
+<p>Klasifikasi Lingkungan Berbasis AI adalah penerapan kecerdasan buatan untuk mengelompokkan kondisi lingkungan berdasarkan gambar. AI membantu manusia memantau lingkungan secara cepat.</p>
+<h3>2. Cara Kerja AI</h3>
+<p>Sistem AI menganalisis pola pada gambar untuk menentukan kategori lingkungan seperti bersih atau tercemar.</p>
+<h3>3. Jenis Klasifikasi</h3>
+<ul>
+<li>Lingkungan Bersih</li>
+<li>Lingkungan Tercemar</li>
+<li>Lingkungan Ramah Lingkungan</li>
+<li>Lingkungan Industri</li>
+</ul>
+<h3>4. Edukasi Sosial</h3>
+<p>Edukasi sosial meningkatkan kesadaran masyarakat untuk menjaga lingkungan.</p>
+<h3>5. Manfaat AI</h3>
+<ol>
+<li>Pemantauan lingkungan real-time</li>
+<li>Meningkatkan kesadaran sosial</li>
+<li>Mendukung keputusan berbasis data</li>
+<li>Mendorong perilaku ramah lingkungan</li>
+</ol>
+<h3>6. Kesimpulan</h3>
+<p>AI membantu menjaga kelestarian alam dan edukasi sosial menciptakan masyarakat peduli lingkungan.</p>
+</section>
+
+<button class="logout" onclick="logout()">Logout</button>
+</div>
+
+<script>
+// Hitung klasifikasi
+let clean=0, dirty=0, eco=0, industry=0;
+
+function login(){
+const user=document.getElementById("username").value.trim();
+const pass=document.getElementById("password").value.trim();
+if(!user||!pass){alert("Nama dan password harus diisi!");return;}
+document.getElementById("loginPage").classList.add("hidden");
+document.getElementById("homePage").classList.remove("hidden");
+document.getElementById("displayName").innerText=user;
+}
+
+function logout(){
+document.getElementById("homePage").classList.add("hidden");
+document.getElementById("loginPage").classList.remove("hidden");
+document.getElementById("username").value="";
+document.getElementById("password").value="";
+}
+
+function previewImage(event){
+const file=event.target.files[0];
+const img=document.getElementById("outputImage");
+const result=document.getElementById("classificationResult");
+if(!file) return;
+img.src=URL.createObjectURL(file);
+img.style.display="block";
+const name=file.name.toLowerCase();
+if(name.includes("bersih")||name.includes("clean")){result.innerText="🌿 Lingkungan Bersih"; clean++;}
+else if(name.includes("sampah")||name.includes("kotor")){result.innerText="🗑️ Lingkungan Tercemar"; dirty++;}
+else if(name.includes("eco")||name.includes("daur")){result.innerText="♻️ Lingkungan Ramah Lingkungan"; eco++;}
+else{result.innerText="🏭 Lingkungan Industri"; industry++;}
+updateChart();
+}
+
+function updateChart(){
+document.querySelector(".clean").style.width=(clean*10+10)+"%";
+document.querySelector(".dirty").style.width=(dirty*10+10)+"%";
+document.querySelector(".eco").style.width=(eco*10+10)+"%";
+document.querySelector(".industry").style.width=(industry*10+10)+"%";
+document.getElementById("cleanCount").innerText=clean;
+document.getElementById("dirtyCount").innerText=dirty;
+document.getElementById("ecoCount").innerText=eco;
+document.getElementById("industryCount").innerText=industry;
+}
+</script>
+
+</body>
+</html>
